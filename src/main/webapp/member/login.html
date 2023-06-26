@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="/style/style_Member.css">
+		<style>
+		div#wrap { width: 360px; padding: 30px 10px 10px; border: 2px solid #08f; border-radius: 6px; margin: 30px auto; }
+		h1 { text-align: center; }
+		main#main {	padding: 20px; border: 2px solid #ddd; margin: 20px;
+					flex-wrap: wrap; }
+		#main>input,
+		#main>button {	width: 100%;	font-size: 15px;	padding: 16px;
+						margin: 6px 0px; 	}
+		
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<form id="loginForm">
+				<h1>로그인</h1>
+				<main id="main" class="dFlex">
+					<input type="text" name="uid" placeholder="아이디 입력">
+					<input type="text" name="upw" placeholder="비밀번호 입력">
+				
+					<button type="button" id="btnLogin">로그인</button>
+					<button type="button" id="btnMain">메인페이지</button>
+				</main>
+			</form>
+			
+		</div>
+		<!-- div#wrap -->
+		<script src="https://code.jquery.com/jquery-3.6.4.js"
+				integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+				crossorigin="anonymous"></script>
+		<script>
+		$(function(){
+			$("#btnLogin").click(function(){
+				$("#loginForm")
+					.attr("action", "/member/loginProc.jsp")
+					.submit();
+			});
+			$("#btnMain").click(function(){
+				location.href="/index.jsp";
+			});
+		});
+		</script>
+	</body>
+</html>
